@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "FreakUI": {
+      "type": "http",
+      "url": "https://www.freakui.com/mcp"
+    }
+  }
+}

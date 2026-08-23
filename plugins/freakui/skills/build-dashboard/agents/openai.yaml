@@ -1,0 +1,7 @@
+interface:
+  display_name: "Build a FreakUI dashboard"
+  short_description: "Shape real app data with adaptive FreakUI components"
+  default_prompt: "Use $build-dashboard to design and build a dashboard with FreakUI."
+  icon_small: "assets/freakui-icon.svg"
+  icon_large: "assets/freakui-icon.svg"
+  brand_color: "#151A1E"

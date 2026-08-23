@@ -1,0 +1,15 @@
+interface:
+  display_name: "Create a FreakUI app"
+  short_description: "Generate an Xcode project with clean architecture, a custom theme, and main screens"
+  default_prompt: "Use $create-app to create a new multiplatform app with FreakUI."
+  icon_small: "assets/freakui-icon.svg"
+  icon_large: "assets/freakui-icon.svg"
+  brand_color: "#151A1E"
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "FreakUI"
+      description: "FreakUI service that returns the new project blueprint"
+      transport: "streamable_http"
+      url: "https://www.freakui.com/mcp"

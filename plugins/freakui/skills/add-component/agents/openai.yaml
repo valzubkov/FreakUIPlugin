@@ -1,0 +1,7 @@
+interface:
+  display_name: "Add a FreakUI component"
+  short_description: "Bring FreakUI's unique look and precision to an existing view"
+  default_prompt: "Use $add-component to improve this view with the right FreakUI component."
+  icon_small: "assets/freakui-icon.svg"
+  icon_large: "assets/freakui-icon.svg"
+  brand_color: "#151A1E"

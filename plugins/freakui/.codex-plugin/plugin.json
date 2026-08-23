@@ -1,0 +1,52 @@
+{
+  "name": "freakui",
+  "version": "0.1.9",
+  "description": "Build a native app for iPhone, iPad, and Mac from one prompt, with a unique, handcrafted interface that stands apart from generic apps.",
+  "author": {
+    "name": "The Freak Company, LLC",
+    "email": "hello@thefreakcompany.com",
+    "url": "https://thefreakcompany.com"
+  },
+  "homepage": "https://www.freakui.com",
+  "license": "MIT",
+  "keywords": [
+    "freakui",
+    "swiftui",
+    "xcode",
+    "ios",
+    "macos",
+    "dashboard",
+    "components",
+    "multiplatform"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "FreakUI",
+    "shortDescription": "Build a native app for iPhone, iPad, and Mac from one prompt, with a unique, handcrafted interface that stands apart from generic apps.",
+    "longDescription": "Build a single-target, multi-platform native Swift application for iPhone, iPad, and macOS from one prompt. FreakUI establishes a robust clean architecture foundation with dependency injection, programmatic navigation, MVVM, and platform-specific root views. Its custom theme initialization, precision-focused components, utilities, and extensions give the interface a distinct and consistent identity. Beyond project creation, dedicated FreakUI skills help shape interface sections, add components, and evolve the interface as the app grows.",
+    "developerName": "The Freak Company",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Single-Target Multi-Platform Foundation",
+      "Clean Architecture with MVVM",
+      "Dependency Injection",
+      "Programmatic Navigation",
+      "Platform-Specific Root Views",
+      "Custom Theme Initialization",
+      "Precision-Focused UI Components",
+      "Adaptive Dashboards and Charts",
+      "Utilities and Extensions"
+    ],
+    "websiteURL": "https://www.freakui.com",
+    "brandColor": "#151A1E",
+    "defaultPrompt": [
+      "Create a multiplatform app with FreakUI.",
+      "Build a dashboard with FreakUI.",
+      "Replace this SwiftUI view with FreakUI components."
+    ],
+    "composerIcon": "./assets/freakui-icon.svg",
+    "logo": "./assets/freakui-icon.svg",
+    "screenshots": []
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "freakui-plugins",
+  "version": "0.1.9",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check plugins/freakui/skills/create-app/scripts/materialize-blueprint.mjs && node --check plugins/freakui/skills/create-app/scripts/verify-generated-project.mjs && node --test tests/*.test.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}

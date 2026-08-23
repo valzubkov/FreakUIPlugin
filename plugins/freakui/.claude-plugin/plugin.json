@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "freakui",
+  "displayName": "FreakUI",
+  "version": "0.1.9",
+  "description": "Build a native app for iPhone, iPad, and Mac from one prompt, with a unique, handcrafted interface that stands apart from generic apps.",
+  "author": {
+    "name": "The Freak Company, LLC",
+    "email": "hello@thefreakcompany.com",
+    "url": "https://thefreakcompany.com"
+  },
+  "homepage": "https://www.freakui.com",
+  "license": "MIT",
+  "keywords": [
+    "freakui",
+    "swiftui",
+    "xcode",
+    "ios",
+    "macos",
+    "dashboard",
+    "components",
+    "multiplatform"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}

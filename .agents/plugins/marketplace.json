@@ -1,0 +1,20 @@
+{
+  "name": "freak-company",
+  "interface": {
+    "displayName": "The Freak Company"
+  },
+  "plugins": [
+    {
+      "name": "freakui",
+      "source": {
+        "source": "local",
+        "path": "./plugins/freakui"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

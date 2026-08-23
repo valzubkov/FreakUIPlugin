@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "freak-company",
+  "description": "Developer plugins from The Freak Company.",
+  "owner": {
+    "name": "The Freak Company, LLC",
+    "email": "hello@thefreakcompany.com"
+  },
+  "plugins": [
+    {
+      "name": "freakui",
+      "source": "./plugins/freakui",
+      "description": "Build a native app for iPhone, iPad, and Mac from one prompt, with a unique, handcrafted interface that stands apart from generic apps.",
+      "category": "development"
+    }
+  ]
+}
