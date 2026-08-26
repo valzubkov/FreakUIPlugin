@@ -14,7 +14,7 @@ App generation requires a FreakUI account with generation access. Dashboard and 
 
 ## Local installation
 
-Version `0.1.9` connects to the production MCP resource at `https://www.freakui.com/mcp`.
+Version `0.1.10` connects to the production MCP resource at `https://www.freakui.com/mcp`.
 
 For Codex, run:
 

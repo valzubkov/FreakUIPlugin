@@ -32,6 +32,13 @@ Use the installed FreakUI public API as the source of truth. This map reflects t
 - Use `FComponentSize` for visual hierarchy and sizing modes for parent-space behavior.
 - Use semantic spacing and radius tokens; fixed geometry is for deliberate chart or platform constraints only.
 
+### Dashboard cell scale
+
+- On compact iPhone layouts, default a full-width primary `FDashboardCell` to `.medium` and grid or supporting cells to `.small`.
+- Reserve `.large` for a deliberately oversized hero treatment after inspecting the rendered hierarchy. The size scales the external label, value, captions, gaps, surface padding, and radius together; it is not a value-only emphasis control.
+- `labelUppercased: false` changes the label's case, not its scale. Use it only when title case better fits the interface, not as compensation for an oversized component.
+- When the design genuinely needs a large value with a quieter label, compose that hierarchy explicitly with narrower FreakUI primitives or app-owned content instead of overriding FreakUI typography inside `FDashboardCell`.
+
 ## Data integrity
 
 - Never invent totals, deltas, categories, chart series, or time ranges.

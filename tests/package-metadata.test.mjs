@@ -102,3 +102,17 @@ test("create-app keeps default example content in the local workflow", async () 
   assert.match(contract, /Example content, included by default unless the user opts out\./u);
   assert.match(starterContent, /Never send them to the FreakUI service\./u);
 });
+
+test("shared dashboard guidance keeps compact metric labels proportionate", async () => {
+  const [starterContent, dashboardSystem] = await Promise.all([
+    readFile("plugins/freakui/skills/create-app/references/starter-content.md", "utf8"),
+    readFile("plugins/freakui/skills/build-dashboard/references/dashboard-system.md", "utf8"),
+  ]);
+
+  assert.match(starterContent, /follow the sibling `build-dashboard` skill/u);
+  assert.match(dashboardSystem, /compact iPhone layouts/u);
+  assert.match(dashboardSystem, /full-width primary `FDashboardCell` to `\.medium`/u);
+  assert.match(dashboardSystem, /grid or supporting cells to `\.small`/u);
+  assert.match(dashboardSystem, /Reserve `\.large` for a deliberately oversized hero treatment/u);
+  assert.match(dashboardSystem, /external label, value, captions, gaps, surface padding, and radius together/u);
+});

@@ -35,7 +35,7 @@ The service receives normalized request metadata only. Repositories, broader wor
 
 ## Release boundary
 
-Version `0.1.9` targets `https://www.freakui.com/mcp` and accepts generation recipe `1.1.1`. It keeps the corrected dependency hub, required AppContext environment injection, `Views/<Name>View` source layout, and warning-free typed-navigation foundation, while adding product-level intake, independent density and corner language, quiet execution, and a local example-content pass. Publishing the marketplace repository and making launch claims remain A-43 gates.
+Version `0.1.10` targets `https://www.freakui.com/mcp` and accepts generation recipe `1.1.1`. It keeps the corrected dependency hub, required AppContext environment injection, `Views/<Name>View` source layout, warning-free typed-navigation foundation, product-level intake, independent density and corner language, quiet execution, and the local example-content pass. Its shared dashboard guidance also defines compact iPhone `FDashboardCell` scale so primary and supporting labels keep an intentional hierarchy. Publishing the marketplace repository and making launch claims remain A-43 gates.
 
 Manifest versions for both ecosystems and the marketplace package version move together. Contract, recipe, and FreakUI Core compatibility remain explicit inside the shared skill and local verifier.
 
