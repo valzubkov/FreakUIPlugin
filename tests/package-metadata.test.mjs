@@ -103,6 +103,19 @@ test("create-app keeps default example content in the local workflow", async () 
   assert.match(starterContent, /Never send them to the FreakUI service\./u);
 });
 
+test("create-app keeps the built-in Settings surface out of generated top-level screens", async () => {
+  const [skill, contract] = await Promise.all([
+    readFile("plugins/freakui/skills/create-app/SKILL.md", "utf8"),
+    readFile("plugins/freakui/skills/create-app/references/contract-1.md", "utf8"),
+  ]);
+
+  assert.match(skill, /Settings is built into every generated foundation/u);
+  assert.match(skill, /omitting it from `topLevelScreens`/u);
+  assert.match(skill, /keeping two to five other app-specific sections/u);
+  assert.match(contract, /type identifier `Settings`, is reserved/u);
+  assert.match(contract, /must not appear in `topLevelScreens`/u);
+});
+
 test("create-app fails closed when the generation tool is unavailable", async () => {
   const skill = await readFile(
     "plugins/freakui/skills/create-app/SKILL.md",

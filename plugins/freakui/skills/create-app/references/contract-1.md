@@ -18,6 +18,8 @@ Use this reference to gather and normalize one supported request.
 
 Use Apple System text and Apple System Monospaced numbers when the user has no font preference. Use an empty notices array unless the user supplies or requests external fonts, assets, or licensed material.
 
+Every generated foundation already includes Settings as a dedicated built-in surface. `Settings`, or any title that normalizes to the Swift type identifier `Settings`, is reserved and must not appear in `topLevelScreens`. When the user asks for Settings, confirm it separately as included and keep two to five other app-specific top-level screens in the request.
+
 ## Local-only choices
 
 - Destination directory.
