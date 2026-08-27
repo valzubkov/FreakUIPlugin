@@ -11,6 +11,12 @@ Use plain product language with the user: say **app**, **project**, **generation
 
 Read [contract-1.md](references/contract-1.md) before gathering the request. Read [fonts.md](references/fonts.md) only when the user supplies font files. Read [local-validation.md](references/local-validation.md) before writing or validating the returned blueprint.
 
+## Required generation boundary
+
+`FreakUI.create_app_blueprint` is the only authorized source of a new FreakUI project foundation. Before intake, destination inspection, or any filesystem change, confirm that this tool is exposed in the current task. If it is unavailable, stop without creating or modifying files and report: **Could not complete: the FreakUI generation connection is unavailable in this task. Reconnect FreakUI and start a new task.**
+
+Never synthesize or copy a replacement foundation from a local FreakUI checkout, another app, a cached blueprint, examples, templates, or prior generated source. Never substitute the `build-dashboard` or `add-component` workflow for `create-app`. Tool unavailability is a blocking failure, not permission to approximate generation locally.
+
 ## Conversation
 
 - Start with the product, not a configuration inventory. Ask what the app does, which Apple devices it should support, its main sections, and how it should feel. If the user asks what choices are available, say: “Tell me what the app does, which Apple devices it should support, and its main sections. If you have a visual preference, describe the mood, how compact or spacious it should feel, and whether corners should be sharp or rounded. I can propose sensible defaults for everything else.”
@@ -25,15 +31,16 @@ A normal confirmation uses short product labels and includes `Example content: I
 
 ## Workflow
 
-1. Resolve an absolute destination. It must be absent or an empty directory. Reject an existing nonempty path; do not offer to merge, overwrite, empty, or delete it.
-2. Complete the product-level intake and receive one explicit confirmation as described above. Example content is included unless the user opts out.
-3. Create an opaque, non-personal retry key for the schema's `requestId`, such as `freakui-<UUID>`. Keep it within 128 characters and use only letters, numbers, periods, underscores, colons, or hyphens. Do not include a name, email address, destination, or timestamp. Reuse it only when retrying the identical normalized request.
-4. Call `FreakUI.create_app_blueprint` once with `{ requestId, request }`. The MCP connection handles sign-in and generation access. Never send the destination, example-content choice, repository, wider workspace, original prompt history, local font paths, font bytes, tokens, or credentials.
-5. On success, materialize the returned `structuredContent` with the bundled local helper as described in [local-validation.md](references/local-validation.md). Do not treat the text summary as the blueprint.
-6. Verify the generated foundation and exact Core requirement, then resolve package dependencies.
-7. When example content is included, read [starter-content.md](references/starter-content.md) and perform the local starter-content pass. This is a local edit to the generated project, not a second generation request.
-8. Re-run structural verification after local edits and compile every selected platform family. Compilation is covered by the confirmation; follow any stricter authority rules in the active workspace.
-9. Report exactly one result state: **Ready**, **Created — verification incomplete**, or **Could not complete**. State the destination, what was verified or where work stopped, and one next action when needed.
+1. Enforce the required generation boundary above. If `FreakUI.create_app_blueprint` is not exposed, stop before intake or filesystem access.
+2. Resolve an absolute destination. It must be absent or an empty directory. Reject an existing nonempty path; do not offer to merge, overwrite, empty, or delete it.
+3. Complete the product-level intake and receive one explicit confirmation as described above. Example content is included unless the user opts out.
+4. Create an opaque, non-personal retry key for the schema's `requestId`, such as `freakui-<UUID>`. Keep it within 128 characters and use only letters, numbers, periods, underscores, colons, or hyphens. Do not include a name, email address, destination, or timestamp. Reuse it only when retrying the identical normalized request.
+5. Call `FreakUI.create_app_blueprint` once with `{ requestId, request }`. The MCP connection handles sign-in and generation access. Never send the destination, example-content choice, repository, wider workspace, original prompt history, local font paths, font bytes, tokens, or credentials.
+6. On success, materialize the returned `structuredContent` with the bundled local helper as described in [local-validation.md](references/local-validation.md). Do not treat the text summary as the blueprint.
+7. Verify the generated foundation and exact Core requirement, then resolve package dependencies.
+8. When example content is included, read [starter-content.md](references/starter-content.md) and perform the local starter-content pass. This is a local edit to the generated project, not a second generation request.
+9. Re-run structural verification after local edits and compile every selected platform family. Compilation is covered by the confirmation; follow any stricter authority rules in the active workspace.
+10. Report exactly one result state: **Ready**, **Created — verification incomplete**, or **Could not complete**. State the destination, what was verified or where work stopped, and one next action when needed.
 
 ## User-facing output
 
@@ -48,6 +55,7 @@ A normal confirmation uses short product labels and includes `Example content: I
 
 ## Failure boundaries
 
+- If `FreakUI.create_app_blueprint` is absent from the current task, stop before reading or writing a destination. Do not fall back to local implementation, even when FreakUI Core or other FreakUI projects are available on the Mac.
 - Follow the service error's `retryable` value and suggestion. A retryable service failure uses the same request ID and unchanged request. Do not retry a non-retryable sign-in, access, contract, or validation error.
 - A local materialization failure does not require another service call. Fix the local cause and reuse the same verified blueprint envelope.
 - Never delete a generated project because package resolution or compilation failed. Preserve it for diagnosis and report the failing platform and stage.

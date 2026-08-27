@@ -103,6 +103,30 @@ test("create-app keeps default example content in the local workflow", async () 
   assert.match(starterContent, /Never send them to the FreakUI service\./u);
 });
 
+test("create-app fails closed when the generation tool is unavailable", async () => {
+  const skill = await readFile(
+    "plugins/freakui/skills/create-app/SKILL.md",
+    "utf8",
+  );
+
+  assert.match(
+    skill,
+    /Before intake, destination inspection, or any filesystem change, confirm that this tool is exposed/u,
+  );
+  assert.match(
+    skill,
+    /stop without creating or modifying files/u,
+  );
+  assert.match(
+    skill,
+    /Never synthesize or copy a replacement foundation/u,
+  );
+  assert.match(
+    skill,
+    /Never substitute the `build-dashboard` or `add-component` workflow/u,
+  );
+});
+
 test("shared dashboard guidance keeps compact metric labels proportionate", async () => {
   const [starterContent, dashboardSystem] = await Promise.all([
     readFile("plugins/freakui/skills/create-app/references/starter-content.md", "utf8"),

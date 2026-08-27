@@ -14,7 +14,7 @@ App generation requires a FreakUI account with generation access. Dashboard and 
 
 ## Install from GitHub
 
-Version `0.1.10` connects to the production MCP resource at `https://www.freakui.com/mcp`.
+Version `0.1.11` connects to the production MCP resource at `https://www.freakui.com/mcp`.
 
 For Codex, run:
 
@@ -72,6 +72,7 @@ Xcode package resolution and compilation are acceptance tests, not repository de
 ## Boundaries
 
 - The generator creates a new project only; it never merges into an existing project.
+- If the authenticated generator connection is unavailable, project creation stops without writing files. It never substitutes a local foundation, example project, dashboard workflow, or component workflow for service generation.
 - Dashboard and component skills make focused local changes only when the user asks for implementation.
 - Supports generation contract 1 and exact FreakUI Core `0.5.0-beta`.
 - Keeps repositories, local fonts, generated source, and build output on the user's Mac.
