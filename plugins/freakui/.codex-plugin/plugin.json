@@ -8,6 +8,7 @@
     "url": "https://thefreakcompany.com"
   },
   "homepage": "https://www.freakui.com",
+  "repository": "https://github.com/valzubkov/FreakUIPlugin",
   "license": "MIT",
   "keywords": [
     "freakui",
@@ -39,6 +40,8 @@
       "Utilities and Extensions"
     ],
     "websiteURL": "https://www.freakui.com",
+    "privacyPolicyURL": "https://www.freakui.com/privacy",
+    "termsOfServiceURL": "https://www.freakui.com/terms",
     "brandColor": "#151A1E",
     "defaultPrompt": [
       "Create a multiplatform app with FreakUI.",

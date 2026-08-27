@@ -12,33 +12,39 @@ This repository contains three shared skills with separate Codex and Claude Code
 
 App generation requires a FreakUI account with generation access. Dashboard and component work run locally against the open-source FreakUI package. The plugin may explain that generation is unavailable, but it never shows plans, starts checkout, manages a subscription, or recommends a purchase.
 
-## Local installation
+## Install from GitHub
 
 Version `0.1.10` connects to the production MCP resource at `https://www.freakui.com/mcp`.
 
 For Codex, run:
 
 ```bash
-codex plugin marketplace add /absolute/path/to/freakui-plugins
+codex plugin marketplace add valzubkov/FreakUIPlugin
 codex plugin add freakui@freak-company
 ```
 
 Start a new Codex task after installation so the skill and MCP server are loaded.
 
-For Claude Code, install the same checkout at local scope:
+For Claude Code, add the same marketplace and install FreakUI:
 
 ```bash
-claude plugin marketplace add --scope local /absolute/path/to/freakui-plugins
-claude plugin install --scope local freakui@freak-company
+claude plugin marketplace add valzubkov/FreakUIPlugin
+claude plugin install freakui@freak-company
 ```
 
-Then start Claude Code from the directory that contains this checkout and run:
+If Claude Code was already open, run:
 
 ```text
 /reload-plugins
 ```
 
 Claude Code exposes `/freakui:create-app`, `/freakui:build-dashboard`, and `/freakui:add-component`. Natural requests activate the same shared skills in either client.
+
+The GitHub repository must be public for these commands to work without repository credentials.
+
+## Local development installation
+
+To test an unpublished checkout, substitute the absolute path to this repository for `valzubkov/FreakUIPlugin`. Use `--scope local` with the Claude Code commands when the installation should remain limited to the current project.
 
 ## Output
 
